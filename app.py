@@ -1,14 +1,29 @@
 from flask import Flask, jsonify, request, Response
 import json
 from settings import *
-from bookModel import * 
+from bookModel import *
+import jwt, datetime
 
 
+books=Book.get_all_books()
+app.config['SECRET_KEY']= 'meow'
+
+@app.route('/login')
+def get_token():
+	expiration_date=datetime.datetime.utcnow() + datetime.timedelta(seconds=100)  
+	token=jwt.encode({'exp': expiration_date}, app.config['SECRET_KEY'], algorithm='HS256')
+	return token
 
 #GET /books
 @app.route('/books')
 def get_books():
-	return jsonify({'books': Book.get_all_books()})
+	token=request.args.get('token')
+	try:
+		dec=jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
+	except:
+		return jsonify({'error': 'Need a valid token to view this page'}), 401
+
+	return jsonify({'books': books})
 
 def validBookObject(bookObject):
 	if ("name" in bookObject and "price" in bookObject and "isbn" in bookObject):
@@ -98,5 +113,6 @@ def delete_book(isbn):
 	return response
 
 
+if __name__=="__main__":
+	app.run(port=5000)
 
-app.run(port=5000)
