@@ -7,7 +7,7 @@ Building a REST API Using Python and Flask
 ##### ***This project shows how to create a simple REST API using the Flask. Among the included features, you'll see how to:*** #####
 * create a database for users who are allowed API accsess
 * GET/POST/PATCH/PUT and DELETE books from our database  
-* Return custom status codes 
+* Return custom status codes, content type and headers
 
 ## Installing:
 
