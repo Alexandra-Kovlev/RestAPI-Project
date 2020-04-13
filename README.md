@@ -2,13 +2,13 @@
 
 Building a REST API Using Python and Flask
 
-## Introduction
+## Introduction:
 
-## Installing:
 ##### ***This project shows how to create a simple RESTful API using the Flask. Among the included features, you'll see how to:*** #####
-
 * creating a database for users who are allowed API accsess
 * GET/POST/PATCH/PUT and DELETE books from our database  
+
+## Installing:
 
 **Install and update using pip:**
 * Flask [![FlaskDownload](http://img.shields.io/:Flask-v.1.1.2-blue.svg)](https://pypi.org/project/Flask/)
