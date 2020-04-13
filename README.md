@@ -11,4 +11,4 @@ Building a REST API Using Python and Flask
  
 **Collaboration Platform for API Development**
 * [Postman] (https://www.postman.com/)
-[![Badges](http://img.shields.io/:badges-7/7-ff6799.svg)](https://github.com/badges/badgerbadgerbadger)
+[![Badges](http://img.shields.io/:badges-7/7-ff6799.svg)](https://pypi.org/project/PyJWT/1.4.0/)
