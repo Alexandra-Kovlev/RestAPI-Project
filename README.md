@@ -21,9 +21,9 @@ Building a REST API Using Python and Flask
 
 
 ## Documentation:
-View the Flask documentation at https://flask.palletsprojects.com/en/1.1.x/
-You can view PyJWT documentation at https://pyjwt.readthedocs.io/en/latest/
-and the documentaion of SQLAlchemy at https://docs.sqlalchemy.org/en/13/
+View the Flask documentation at https://flask.palletsprojects.com/en/1.1.x/  
+You can view PyJWT documentation at https://pyjwt.readthedocs.io/en/latest/  
+and the documentaion of SQLAlchemy at https://docs.sqlalchemy.org/en/13/  
 
 
 The code is hosted at https://github.com/Alexandra-Kovlev/RestAPI-Project
