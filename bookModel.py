@@ -15,33 +15,33 @@ class Book(db.Model):
 	def json(self):
 		return {'name': self.name , 'price': self.price, 'isbn': self.isbn} 
 
-	def add_book(_name, _price, _isbn):
+	def addBook(_name, _price, _isbn):
 		new_book=Book(name=_name, price=_price, isbn=_isbn)
 		db.session.add(new_book)
 		db.session.commit()
 
-	def get_all_books():
+	def getAllBooks():
 		return [Book.json(book) for book in Book.query.all()]
 
-	def get_book(_isbn):
+	def getBook(_isbn):
 		return Book.json(Book.query.filter_by(isbn=_isbn).first())
 
-	def delete_book(_isbn):
+	def deleteBook(_isbn):
 		is_successful=Book.query.filter_by(isbn=_isbn).delete()
 		db.session.commit()
 		return bool(is_successful)
 
-	def update_book_price(_isbn, _price):
+	def updateBookPrice(_isbn, _price):
 		book_to_update=Book.query.filter_by(isbn=_isbn).first()
 		book_to_update.price=_price
 		db.session.commit()
 
-	def update_book_name(_isbn, _name):
+	def updateBookName(_isbn, _name):
 		book_to_update=Book.query.filter_by(isbn=_isbn).first()
 		book_to_update.name=_name
 		db.session.commit()
 
-	def replace_book(_isbn, _name, _price):
+	def replaceBook(_isbn, _name, _price):
 		book_to_replace=Book.query.filter_by(isbn=_isbn).first()
 		book_to_replace.price= _price
 		book_to_replace.name= _name
